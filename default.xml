@@ -1,78 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <remote  name="aosp"
-    fetch="https://android.googlesource.com/" />
-  <remote  name="grapheneos"
-    fetch="https://github.com/GrapheneOS/"
-    revision="refs/heads/13" />
-  <default revision="refs/tags/android-13.0.0_r0.55"
-    remote="aosp" sync-j="4" />
-
-  <project path="aosp" name="kernel_common-5.10" groups="partner" remote="grapheneos"/>
-  <project path="private/gs-google" name="kernel_gs-pantah" groups="partner" remote="grapheneos">
-    <linkfile dest="build.config" src="build.config.slider"/>
-    <linkfile dest="build_mixed.sh" src="build_mixed.sh"/>
-    <linkfile dest="build_cloudripper.sh" src="build_cloudripper.sh"/>
-    <linkfile dest="update_symbol_list_cloudripper-aosp.sh" src="update_symbol_list_cloudripper-aosp.sh"/>
-    <linkfile dest="update_symbol_list_cloudripper-staging.sh" src="update_symbol_list_cloudripper-staging.sh"/>
-    <linkfile dest=".source_date_epoch_dir" src="."/>
+  <remote name="aosp" fetch="https://android.googlesource.com/"/>
+  <remote name="grapheneos" fetch="https://github.com/GrapheneOS/" revision="refs/tags/TQ1A.230105.002.2023020200"/>
+  
+  <default remote="aosp" revision="refs/tags/android-13.0.0_r0.55" sync-j="4"/>
+  
+  <project name="kernel/common-modules/virtual-device" path="common-modules/virtual-device" revision="aaae95d2735a690d700b1b8238cd70a5c18cc23c" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55"/>
+  <project name="kernel/configs" revision="b3cc2bc03dab303c54a9ce1f709f8ee315eb311d" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55"/>
+  <project name="kernel/google-modules/amplifiers" path="private/google-modules/amplifiers" revision="5872bab537238c1cbf537c1023123f5375542c03" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/aoc" path="private/google-modules/aoc" revision="b1426f59b7504d4b51c213953b86f25899d61001" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/aoc-ipc" path="private/google-modules/aoc_ipc" revision="9647bab8bdf5504a26872c6556938107895fe0f1" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/bluetooth/broadcom" path="private/google-modules/bluetooth/broadcom" revision="d6a4385da5e181e81d5b4bd75a4cd2d70e9c0a51" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/bms" path="private/google-modules/bms" revision="24cf1dc5c51d9ef2a11a8e2fdc25fd272cb6efa1" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/display" path="private/google-modules/display" revision="6a19b9d648186e8f50f5f930825c9be280a3a2e8" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/edgetpu/janeiro" path="private/google-modules/edgetpu/janeiro" revision="e218f92492bdd7c1e47004709f19995d879f8f94" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/gxp/gs201" path="private/google-modules/gxp/gs201" revision="b734962d272c08c48e376d1d0dbadc8cb279be36" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/lwis" path="private/google-modules/lwis" revision="c7d01360907417e63b23833eec40812365b2701a" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/misc" path="private/google-modules/misc" revision="34b23ad5680d2ec49c5d8dd5aaaacf75d0a19a6c" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/nfc" path="private/google-modules/nfc" revision="9f506bb9c8f365708df29ffac4164c1b6e30f340" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/power/reset" path="private/google-modules/power/reset" revision="68312cf028f2dc1aa70dc107c0e44334189b0810" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/touch/common" path="private/google-modules/touch/common" revision="e3c84381633cabd76f7f29bdfa9ba4f00cdaa407" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/touch/focaltech_touch" path="private/google-modules/touch/focaltech" revision="c71f2363a274fd03b243451f66cae39d41ff249f" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/touch/sec_touch" path="private/google-modules/touch/sec" revision="ed306c939e810754f6cb52b46ac4cda9bb5755b9" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/touch/synaptics_touch" path="private/google-modules/touch/synaptics" revision="60554277abae4debacde2b0878eff089532abc4e" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/google-modules/uwb" path="private/google-modules/uwb" revision="b9c8775cbf64e7bd4fcd70cd3dd97e23c209cd62" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="uwb"/>
+  <project name="kernel/google-modules/uwb-diags" path="private/google-modules/uwb-diags" revision="1ce8cd233f5bdc6dc4b13aa0a77b8faad1ea8935" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="uwb"/>
+  <project name="kernel/google-modules/video/gchips" path="private/google-modules/video/gchips" revision="7de143a697adb5152051896454a4ec36a9bf63e5" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="kernel/prebuilts/build-tools" path="prebuilts/kernel-build-tools" revision="67705de48752ea5c9d7d679c737f6ebbc8ba7348" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1">
+    <linkfile src="." dest="build/prebuilts/kernel-build-tools"/>
   </project>
-  <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
-  <project path="private/google-modules/aoc_ipc" name="kernel/google-modules/aoc-ipc" groups="partner" />
-  <project path="private/google-modules/display" name="kernel/google-modules/display" groups="partner" />
-  <project path="private/google-modules/gpu" name="kernel_google-modules_gpu-pantah" groups="partner" remote="grapheneos" />
-  <project path="private/google-modules/gxp/gs201" name="kernel/google-modules/gxp/gs201" groups="partner" />
-  <project path="private/google-modules/edgetpu/janeiro" name="kernel/google-modules/edgetpu/janeiro" groups="partner" />
-  <project path="private/google-modules/power/reset" name="kernel/google-modules/power/reset" groups="partner" />
-  <project path="prebuilts/boot-artifacts" name="platform/prebuilts/boot-artifacts" clone-depth="1" groups="partner" />
-  <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers" groups="partner" />
-  <project path="private/google-modules/bluetooth/broadcom" name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
-  <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
-  <project path="private/google-modules/lwis" name="kernel/google-modules/lwis" groups="partner" />
-  <project path="private/google-modules/misc" name="kernel/google-modules/misc" groups="partner" />
-  <project path="private/google-modules/touch/common" name="kernel/google-modules/touch/common" groups="partner" />
-  <project path="private/google-modules/touch/focaltech" name="kernel/google-modules/touch/focaltech_touch" groups="partner" />
-  <project path="private/google-modules/touch/sec" name="kernel/google-modules/touch/sec_touch" groups="partner" />
-  <project path="private/google-modules/touch/synaptics" name="kernel/google-modules/touch/synaptics_touch" groups="partner" />
-  <project path="private/google-modules/uwb" name="kernel/google-modules/uwb" groups="uwb" />
-  <project path="private/google-modules/uwb-diags" name="kernel/google-modules/uwb-diags" groups="uwb" />
-  <project path="private/google-modules/nfc" name="kernel/google-modules/nfc" groups="partner" />
-  <project path="private/google-modules/wlan/bcmdhd4389" name="kernel_google-modules_wlan_bcmdhd_bcm4389-pantah" groups="partner" remote="grapheneos" />
-  <project path="private/google-modules/video/gchips" name="kernel/google-modules/video/gchips" groups="partner" />
-  <project path="build/kernel" name="kernel_build-pantah" groups="partner" remote="grapheneos">
-    <linkfile dest="tools/bazel" src="kleaf/bazel.sh"/>
-    <linkfile dest="WORKSPACE" src="kleaf/bazel.WORKSPACE"/>
-    <linkfile dest="build/build.sh" src="build.sh"/>
-    <linkfile dest="build/build_abi.sh" src="build_abi.sh"/>
-    <linkfile dest="build/build_test.sh" src="build_test.sh"/>
-    <linkfile dest="build/build_utils.sh" src="build_utils.sh"/>
-    <linkfile dest="build/BUILD.bazel" src="BUILD.bazel"/>
-    <linkfile dest="build/build-tools/path" src="build-tools/path"/>
-    <linkfile dest="build/config.sh" src="config.sh"/>
-    <linkfile dest="build/envsetup.sh" src="envsetup.sh"/>
-    <linkfile dest="build/_setup_env.sh" src="_setup_env.sh"/>
-    <linkfile dest="build/multi-switcher.sh" src="multi-switcher.sh"/>
-    <linkfile dest="build/kleaf" src="kleaf"/>
-    <linkfile dest="build/abi" src="abi"/>
-    <linkfile dest="build/static_analysis" src="static_analysis"/>
+  <project name="kernel_build-pantah" path="build/kernel" remote="grapheneos" revision="4029b758e5fcd1a52a2749c3410df9c61fe7aac9" upstream="refs/tags/TQ1A.230105.002.2023020200" dest-branch="refs/tags/TQ1A.230105.002.2023020200" groups="partner">
+    <linkfile src="kleaf/bazel.sh" dest="tools/bazel"/>
+    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE"/>
+    <linkfile src="build.sh" dest="build/build.sh"/>
+    <linkfile src="build_abi.sh" dest="build/build_abi.sh"/>
+    <linkfile src="build_test.sh" dest="build/build_test.sh"/>
+    <linkfile src="build_utils.sh" dest="build/build_utils.sh"/>
+    <linkfile src="BUILD.bazel" dest="build/BUILD.bazel"/>
+    <linkfile src="build-tools/path" dest="build/build-tools/path"/>
+    <linkfile src="config.sh" dest="build/config.sh"/>
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh"/>
+    <linkfile src="_setup_env.sh" dest="build/_setup_env.sh"/>
+    <linkfile src="multi-switcher.sh" dest="build/multi-switcher.sh"/>
+    <linkfile src="kleaf" dest="build/kleaf"/>
+    <linkfile src="abi" dest="build/abi"/>
+    <linkfile src="static_analysis" dest="build/static_analysis"/>
   </project>
-  <project path="kernel/configs" name="kernel/configs" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" />
-  <project path="prebuilts/gas/linux-x86" name="platform/prebuilts/gas/linux-x86" clone-depth="1" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" groups="partner" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" groups="partner" />
-  <project path="prebuilts/misc" name="platform/prebuilts/misc" clone-depth="1" groups="partner" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" groups="partner">
-    <linkfile dest="build/prebuilts/build-tools" src="."/>
+  <project name="kernel_common-5.10" path="aosp" remote="grapheneos" revision="219d8b392e1de4151cc5c170ae04cf5f406239f1" upstream="refs/tags/TQ1A.230105.002.2023020200" dest-branch="refs/tags/TQ1A.230105.002.2023020200" groups="partner"/>
+  <project name="kernel_google-modules_gpu-pantah" path="private/google-modules/gpu" remote="grapheneos" revision="c48886fd473a20e28bb0199fc40f78ed1ec88b1d" upstream="refs/tags/TQ1A.230105.002.2023020200" dest-branch="refs/tags/TQ1A.230105.002.2023020200" groups="partner"/>
+  <project name="kernel_google-modules_wlan_bcmdhd_bcm4389-pantah" path="private/google-modules/wlan/bcmdhd4389" remote="grapheneos" revision="2dffbc22e90d700fa440535a1fbac566c298a42d" upstream="refs/tags/TQ1A.230105.002.2023020200" dest-branch="refs/tags/TQ1A.230105.002.2023020200" groups="partner"/>
+  <project name="kernel_gs-pantah" path="private/gs-google" remote="grapheneos" revision="68860c5abb5ffdc38b63775b3ac9972af518f23d" upstream="refs/tags/TQ1A.230105.002.2023020200" dest-branch="refs/tags/TQ1A.230105.002.2023020200" groups="partner">
+    <linkfile src="build.config.slider" dest="build.config"/>
+    <linkfile src="build_mixed.sh" dest="build_mixed.sh"/>
+    <linkfile src="build_cloudripper.sh" dest="build_cloudripper.sh"/>
+    <linkfile src="update_symbol_list_cloudripper-aosp.sh" dest="update_symbol_list_cloudripper-aosp.sh"/>
+    <linkfile src="update_symbol_list_cloudripper-staging.sh" dest="update_symbol_list_cloudripper-staging.sh"/>
+    <linkfile src="." dest=".source_date_epoch_dir"/>
   </project>
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" groups="partner">
-    <linkfile dest="build/prebuilts/kernel-build-tools" src="."/>
+  <project name="platform/build/bazel_common_rules" path="build/bazel_common_rules" revision="ddd2d82d10e21fb4137d2db3c1b848d6f1832acc" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="platform/external/bazel-skylib" path="external/bazel-skylib" revision="f1fb8167b4ed64feb494fd1ea6a8a619bbb549de" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="platform/external/stardoc" path="external/stardoc" revision="b6ef2c6b6e39087f7396aaeb13c83464dfce4a19" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
+  <project name="platform/prebuilts/bazel/linux-x86_64" path="prebuilts/bazel/linux-x86_64" revision="6162318e6458db65f94eed6671e302c3e894b1ac" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/boot-artifacts" path="prebuilts/boot-artifacts" revision="5cc27b168d534bca455d6fe218afcdc81c5f691c" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/build-tools" path="prebuilts/build-tools" revision="f6813860e16b2fa1461a15e7b8a3127dfdee021a" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1">
+    <linkfile src="." dest="build/prebuilts/build-tools"/>
   </project>
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" groups="partner" />
-  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" groups="partner" />
-  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" groups="partner" />
-  <project path="external/stardoc" name="platform/external/stardoc" groups="partner" />
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" groups="partner" />
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" groups="partner" />
+  <project name="platform/prebuilts/clang/host/linux-x86" path="prebuilts/clang/host/linux-x86" revision="4bb6424cb1615af408ae80871131f4da8c4ddadf" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/gas/linux-x86" path="prebuilts/gas/linux-x86" revision="592150fc8ae9f48f2e73f390961f32ca6f5f6a9f" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" clone-depth="1"/>
+  <project name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" revision="007101a451907c5369db5002ddf7b14dcefb7864" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/jdk/jdk11" path="prebuilts/jdk/jdk11" revision="aee26c8cd89b9abb428f676caba168699cd8662f" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1"/>
+  <project name="platform/prebuilts/misc" path="prebuilts/misc" revision="c43649e7548e1054a4f999bfe4aab34ec2fbc8ee" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner" clone-depth="1"/>
+  <project name="platform/system/tools/mkbootimg" path="tools/mkbootimg" revision="2208a03d874255af1e4eaf6cf7c156fe1dc98943" upstream="refs/tags/android-13.0.0_r0.55" dest-branch="refs/tags/android-13.0.0_r0.55" groups="partner"/>
 </manifest>
